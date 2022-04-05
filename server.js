@@ -4,10 +4,10 @@ import userController from './controllers/user-controller.js';
 import tuitsController from './controllers/tuits-controller.js';
 import cors from 'cors';
 
-// const cors_options = {credentials: true, origin : "http://localhost:3000"};
+const cors_options = {credentials: true, origin : "https://a8--quizzical-jennings-349fca.netlify.app"};
 
 const app = express();
-app.use(cors());
+app.use(cors(cors_options));
 app.use(express.json());
 helloController(app)
 userController(app)
