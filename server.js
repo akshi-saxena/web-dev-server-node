@@ -11,5 +11,5 @@ app.use(express.json());
 helloController(app)
 userController(app)
 tuitsController(app)
-// app.get('/', (req,res) => res.send('Welcome to Full Stack Development'))
+app.get('/', (req,res) => res.send('Welcome to Full Stack Development'))
 app.listen(4000);
