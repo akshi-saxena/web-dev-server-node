@@ -5,6 +5,9 @@ import userController from './controllers/user-controller.js';
 import tuitsController from './controllers/tuits-controller.js';
 import cors from 'cors';
 
+import tuitsController from "./tuits/tuits-controller.js";
+mongoose.connect('mongodb+srv://akshisaxena:<password>@cluster0.jvygh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+
 const app = express();
 app.use(cors());
 app.use(express.json());
