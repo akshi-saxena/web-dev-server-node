@@ -6,7 +6,10 @@ import tuitsController from './controllers/tuits-controller.js';
 import cors from 'cors';
 
 import tuitsController from "./tuits/tuits-controller.js";
-mongoose.connect('mongodb+srv://akshisaxena:<password>@cluster0.jvygh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+// mongoose.connect('mongodb+srv://akshisaxena:<password>@cluster0.jvygh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/webdev'
+mongoose.connect(CONNECTION_STRING);
 
 const app = express();
 app.use(cors());
