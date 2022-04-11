@@ -1,3 +1,4 @@
+import tuitsDao from "../tuits-dao.js";
 
 const findAllTuits = async (req, res) => {
     const tuits = await tuitsDao.findAllTuits()
@@ -16,7 +17,7 @@ const deleteTuit = async (req, res) => {
     res.send(status);
 }
 
-const updateTuit = (req, res) => {
+const updateTuit = async (req, res) => {
     const tuitdIdToUpdate = req.params.tid;
     const updatedTuit = req.body;
     const status = await tuitsDao.updateTuit(tuitdIdToUpdate, updatedTuit);
