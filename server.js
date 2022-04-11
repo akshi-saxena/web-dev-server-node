@@ -8,6 +8,10 @@ import cors from 'cors';
 import tuitsController from "./tuits/tuits-controller.js";
 // mongoose.connect('mongodb+srv://akshisaxena:<password>@cluster0.jvygh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 
+const mongoose = require('mongoose')
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/webdev'
+mongoose.connect(CONNECTION_STRING);
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -17,6 +21,3 @@ tuitsController(app)
 app.get('/', (req,res) => res.send('Welcome to Full Stack Development'))
 app.listen(process.env.PORT || 4000);
 
-const mongoose = require('mongoose')
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/webdev'
-mongoose.connect(CONNECTION_STRING);
